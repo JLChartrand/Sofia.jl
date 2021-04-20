@@ -10,6 +10,7 @@ struct Model <: AbstractModel{NotUpdatable}
     Hdotv!::Function
     function Model(F::Function, grad!::Function = genGrad(F), H! = genHes!(F), Hdotv!::Function = genHdotv!(F))
         return new{NotUpdatable}(F, grad!, H!, Hdotv!)
+    end
 end
 
 
