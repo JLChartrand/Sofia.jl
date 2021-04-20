@@ -1,0 +1,7 @@
+name = "Sofia"
+uuid = "b68aaeaf-402c-497a-ae27-a3e8511309cf"
+authors = ["jean20 "]
+version = "0.1.0"
+
+[deps]
+ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
