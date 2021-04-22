@@ -14,4 +14,4 @@ struct Model <: AbstractModel{NotUpdatable}
 end
 
 
-abstract type AbstractStochasticFunc{U <: IsUpdatable} <: AbstractModel{U} end
+abstract type AbstractStochasticModel{U <: IsUpdatable} <: AbstractModel{U} end
