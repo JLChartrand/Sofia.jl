@@ -3,13 +3,14 @@ struct Updatable <: IsUpdatable end
 struct NotUpdatable <: IsUpdatable end
 
 abstract type AbstractModel{U <: IsUpdatable} end
-struct Model <: AbstractModel{NotUpdatable}
+struct Model{T <: IsUpdatable} <: AbstractModel{T}
     F::Function 
     grad!::Function
     H!::Function
     Hdotv!::Function
-    function Model(F::Function, grad!::Function = genGrad(F), H! = genHes!(F), Hdotv!::Function = genHdotv!(F))
-        return new(F, grad!, H!, Hdotv!)
+    function Model(F::Function, grad!::Function = genGrad(F), H! = genHes!(F), Hdotv!::Function = genHdotv!(F), upd::Bool = false)
+        UPD = upd ? Updatable : NotUpdatable
+        return new{UPD}(F, grad!, H!, Hdotv!)
     end
 end
 
