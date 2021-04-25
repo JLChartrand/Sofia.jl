@@ -16,3 +16,7 @@ end
 
 
 abstract type AbstractStochasticModel{U <: IsUpdatable} <: AbstractModel{U} end
+function Nobs(mo::AbstractStochasticModel)
+    #must be defined for most optimisation routines
+    return -1
+end
