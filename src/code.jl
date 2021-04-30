@@ -41,7 +41,7 @@ function Fs(x::Vector, mo::AbstractModel)
     return zeros(1)
 end
 
-function grads!(x::Vector, mo::AbstractModel, stack::Matrix)
+function grads!(x::Vector, mo::AbstractModel, stack::Array{Vector, 1})
     prinltn("grads! not defined for Model")
     #return zeros(1, 1)
 end
