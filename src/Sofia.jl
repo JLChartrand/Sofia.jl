@@ -1,8 +1,10 @@
 module Sofia
 using ForwardDiff
 
-export F, grad!, H!, Hdotv!, Hdotv, BHHH!, BHHHdotv!, BHHHdotv, Fs, grads!, grads,
-    gradind, gradind!, Find, 
+export F, Fs, Fs!
+    grad, grad!, grads!, grads,
+    H!, Hdotv!, Hdotv, 
+    BHHH!, BHHHdotv!, BHHHdotv, 
     AbstractStochasticModel, AbstractModel, Model,
     IsUpdatable, Updatable, NotUpdatable, Nobs
 include("gen.jl")
